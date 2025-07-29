@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-	const userAgent = (req.headers.get("user-agent") || "").toLowerCase();
+	const userAgent: string = (req.headers.get("user-agent") || "").toLowerCase();
+	console.warn("User Agent: " + userAgent);
 	const isCli = userAgent.includes("curl");
+	console.warn("Is curl: " + isCli ? "yes" : "no");
 	const pathname = req.nextUrl.pathname;
 
 	if (!isCli)

@@ -24,6 +24,9 @@ export async function GET(req: NextRequest) {
 		const pureData = await fetchData.json();
 		const answerObject: AnswerObject = pureData?.data.answer;
 
+		const userAgent = req.headers.get("user-agent")?.toLowerCase() || "";
+		const isCli = userAgent.includes("curl");
+
 		const output = boxen(
 			[
 				`${chalk.green.bold(figures.tick)} ${chalk.bold(
@@ -48,11 +51,11 @@ export async function GET(req: NextRequest) {
 		if (returnJson) {
 			return new Response(JSON.stringify(pureData), {
 				status: 200,
-				headers: { "Content-Type": "application/json" }
+				headers: { "Content-Type": "application/json; charset=utf-8" }
 			});
 		}
 
-		return new Response(noColor ? stripAnsi(output) : output, {
+		return new Response(noColor || !isCli ? stripAnsi(output) : output, {
 			status: 200,
 			headers: { "Content-Type": "text/plain; charset=utf-8" }
 		});
