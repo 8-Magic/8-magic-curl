@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 8-Magic CLI
 
-## Getting Started
+This repository holds codes of a special API endpoint for terminal tools to fetch, format and show answers to users.
 
-First, run the development server:
+## Usage
+
+Wanna try it? just run this in your terminal:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+curl https://cli.8.alialmasi.ir
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To use this in older environments or terminals, you might face some problems with the ANSI color codes. For that use the `/?noColor=1` query at the end of the URL.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To receive the raw data fetched from the API, use `/?json=1` query.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Tip: pipe the raw data to [`jq`](https://github.com/jqlang/jq) for better formatting.
 
-## Learn More
+## See Also
 
-To learn more about Next.js, take a look at the following resources:
+- [8-Magic npx](https://github.com/8-Magic/8-magic-npx)
+- [8-Magic API](https://api.8.alialmasi.ir)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project, as part of the work of the 8-Magic team, is licensed under the 8-Magic Public License.  
+For more information, [see this page](https://8-magic.github.io/8-Magic-Public-License/).
