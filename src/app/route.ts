@@ -39,7 +39,7 @@ const boxenSettings: Options = {
 		right: 6
 	},
 	titleAlignment: "center",
-	borderStyle: "classic"
+	borderStyle: "round"
 };
 
 export async function GET(req: NextRequest) {
